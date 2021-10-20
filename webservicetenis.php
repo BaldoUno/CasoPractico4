@@ -30,7 +30,7 @@
             $stmt->bindParam(':id', $id);
             $stmt->execute();
             $data = $stmt->fetch(PDO::FETCH_ASSOC);
-            return json_encode($data);
+            return json($data);
             $conexion = null;
         }catch (Exception $e){
             return join (",",array(false));
@@ -45,7 +45,7 @@
             $stmt->bindParam(':id', $id);
             $stmt->execute();
             $data = $stmt->fetch(PDO::FETCH_ASSOC);
-            return json_encode(true);
+            return json(true);
             $conexion = null;
         }catch (Exception $e){
             return join (",",array(false));
